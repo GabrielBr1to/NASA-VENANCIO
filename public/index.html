@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090d18">
+    <meta name="description" content="Descubra a imagem astronômica do dia da NASA.">
+    <title>Universo do dia | NASA APOD</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Universo do dia, início">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>UNIVERSO <span class="brand-light">DO DIA</span></span>
+      </a>
+      <span class="source-label"><span class="status-dot" aria-hidden="true"></span> NASA · APOD</span>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">ASTRONOMY PICTURE OF THE DAY</p>
+        <h1 id="page-title">Uma janela para o <span>universo.</span></h1>
+        <p class="intro-copy">A cada dia, uma nova história capturada no cosmos.</p>
+      </section>
+
+      <form class="date-picker" id="date-form">
+        <label for="apod-date">Explore outra data</label>
+        <div class="date-controls">
+          <input id="apod-date" name="date" type="date" min="1995-06-16" required>
+          <button type="submit">Ver imagem <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+
+      <p class="status-message" id="status" role="status" aria-live="polite">Buscando a imagem do dia…</p>
+
+      <article class="apod-card" id="apod-card" hidden>
+        <figure class="media-frame" id="media-frame"></figure>
+        <div class="apod-content">
+          <div class="apod-meta">
+            <span class="date-badge" id="result-date"></span>
+            <span class="media-type" id="media-type"></span>
+          </div>
+          <h2 id="result-title"></h2>
+          <p class="explanation" id="result-explanation"></p>
+          <a class="original-link" id="original-link" target="_blank" rel="noopener noreferrer">
+            Ver publicação original <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <span>Dados e imagens fornecidos pela NASA</span>
+      <span>Olhe para cima. <span aria-hidden="true">✦</span></span>
+    </footer>
+  </body>
+</html>

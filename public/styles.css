@@ -1,0 +1,352 @@
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #090d18;
+  color: #f3f5fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --muted: #9da7bd;
+  --accent: #9bb9ff;
+  --panel: #111827;
+  --line: #252e40;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgb(40 57 99 / 24%), transparent 42rem),
+    #090d18;
+}
+
+.topbar,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 26px 36px;
+}
+
+.topbar {
+  border-bottom: 1px solid rgb(255 255 255 / 7%);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #f3f5fb;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+}
+
+.brand-mark {
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+.brand-light {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.source-label,
+.eyebrow,
+.media-type {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.13em;
+}
+
+.source-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #8db4ff;
+  box-shadow: 0 0 12px rgb(141 180 255 / 70%);
+}
+
+main {
+  width: min(100% - 40px, 880px);
+  margin: 0 auto;
+}
+
+.intro {
+  padding: 70px 0 28px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 4.1rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.12;
+}
+
+h1 span {
+  color: var(--accent);
+}
+
+.intro-copy {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.date-picker {
+  width: min(100%, 500px);
+  margin: 14px auto 28px;
+}
+
+.date-picker label {
+  display: block;
+  margin-bottom: 9px;
+  color: #c4cbda;
+  font-size: 0.84rem;
+}
+
+.date-controls {
+  display: flex;
+  gap: 10px;
+}
+
+input,
+button {
+  min-height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  font: inherit;
+}
+
+input {
+  flex: 1;
+  min-width: 0;
+  padding: 0 12px;
+  background: #101725;
+  color: #f3f5fb;
+}
+
+input:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+button {
+  padding: 0 17px;
+  border-color: #9bb9ff;
+  background: #9bb9ff;
+  color: #101725;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 700;
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  background: #b6cbff;
+}
+
+.status-message {
+  min-height: 25px;
+  margin: 0 auto 18px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.status-message[data-state="error"] {
+  color: #ffaaa8;
+}
+
+.apod-card {
+  overflow: hidden;
+  margin-bottom: 70px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(145deg, #121a2a, #0d1320);
+  box-shadow: 0 22px 65px rgb(0 0 0 / 24%);
+}
+
+.apod-card[hidden] {
+  display: none;
+}
+
+.media-frame {
+  display: grid;
+  min-height: 220px;
+  max-height: 570px;
+  place-items: center;
+  margin: 0;
+  overflow: hidden;
+  background: #080b12;
+}
+
+.media-frame img {
+  display: block;
+  width: 100%;
+  max-height: 570px;
+  object-fit: contain;
+}
+
+.video-card {
+  display: grid;
+  width: 100%;
+  min-height: 260px;
+  place-content: center;
+  justify-items: center;
+  gap: 14px;
+  padding: 30px;
+  color: #dce5fa;
+  text-align: center;
+  text-decoration: none;
+  background: radial-gradient(ellipse, #1d2b48, #080b12 72%);
+}
+
+.video-card span:first-child {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 25%);
+  border-radius: 50%;
+  background: rgb(155 185 255 / 15%);
+  color: var(--accent);
+  font-size: 1.3rem;
+}
+
+.video-card span:last-child {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.apod-content {
+  padding: 27px clamp(20px, 5vw, 42px) 34px;
+}
+
+.apod-meta {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.date-badge {
+  padding: 6px 10px;
+  border: 1px solid #293754;
+  border-radius: 999px;
+  background: #172238;
+  color: #bdd0ff;
+  font-size: 0.76rem;
+}
+
+h2 {
+  margin: 16px 0 12px;
+  font-size: clamp(1.45rem, 4vw, 2rem);
+  font-weight: 550;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.explanation {
+  margin: 0;
+  color: #b3bdcf;
+  font-size: 0.98rem;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.original-link {
+  display: inline-flex;
+  gap: 7px;
+  margin-top: 21px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  text-decoration: none;
+}
+
+.original-link:hover {
+  text-decoration: underline;
+}
+
+footer {
+  border-top: 1px solid rgb(255 255 255 / 7%);
+  color: #78839a;
+  font-size: 0.78rem;
+}
+
+footer span:last-child span {
+  color: var(--accent);
+}
+
+@media (max-width: 560px) {
+  .topbar,
+  footer {
+    padding: 20px;
+  }
+
+  .topbar {
+    gap: 12px;
+  }
+
+  .brand {
+    font-size: 0.68rem;
+  }
+
+  .source-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+  }
+
+  .intro {
+    padding-top: 55px;
+  }
+
+  .intro-copy {
+    font-size: 0.9rem;
+  }
+
+  .date-controls {
+    flex-direction: column;
+  }
+
+  .date-controls button {
+    width: 100%;
+  }
+
+  .media-frame,
+  .media-frame img {
+    max-height: 380px;
+  }
+
+  footer {
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.7rem;
+  }
+}
